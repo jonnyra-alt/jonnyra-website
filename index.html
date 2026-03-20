@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JONNY RA — Something Big Is Coming</title>
+  <meta name="description" content="JONNY RA — Jeopardized. Opinion. Never. Needed. You. A new experience is being built." />
+  <meta property="og:title" content="JONNY RA" />
+  <meta property="og:description" content="Something big is coming. Stay tuned." />
+  <meta property="og:image" content="jonnyra-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #D4A843;
+      --gold-dim: rgba(212, 168, 67, 0.15);
+      --black: #000000;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.45);
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Subtle animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,168,67,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 110%, rgba(212,168,67,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      gap: 2.5rem;
+    }
+
+    /* Logo */
+    .logo-wrap {
+      width: clamp(140px, 22vw, 220px);
+      animation: floatLogo 6s ease-in-out infinite;
+    }
+    .logo-wrap img {
+      width: 100%;
+      filter: drop-shadow(0 0 28px rgba(212,168,67,0.35));
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Brand name */
+    .brand {
+      letter-spacing: 0.35em;
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1;
+    }
+    .brand span {
+      color: var(--gold);
+    }
+
+    /* Tagline */
+    .tagline {
+      font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+      letter-spacing: 0.25em;
+      color: var(--muted);
+      font-weight: 400;
+      text-transform: uppercase;
+      max-width: 500px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* Status pill */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold-dim);
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 999px;
+      padding: 0.5rem 1.4rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .status .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* Main message */
+    .headline {
+      font-size: clamp(1.6rem, 4.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 640px;
+      letter-spacing: 0.01em;
+    }
+    .headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .sub {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 480px;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    /* Email capture */
+    .notify-form {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      max-width: 420px;
+      border: 1px solid rgba(212,168,67,0.35);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .notify-form:focus-within {
+      border-color: var(--gold);
+    }
+    .notify-form input {
+      flex: 1;
+      padding: 0.85rem 1.2rem;
+      background: rgba(255,255,255,0.04);
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+    .notify-form input::placeholder { color: var(--muted); }
+    .notify-form button {
+      padding: 0.85rem 1.4rem;
+      background: var(--gold);
+      border: none;
+      color: #000;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .notify-form button:hover { background: #e8c060; }
+
+    .form-note {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Social links */
+    .socials {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+    }
+    .socials a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .socials a:hover { color: var(--gold); }
+
+    /* Footer */
+    .footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.18);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Gold particle shimmer lines */
+    .shimmer {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+      opacity: 0;
+      animation: shimmerLine 8s ease-in-out infinite;
+    }
+    @keyframes shimmerLine {
+      0% { opacity: 0; transform: scaleX(0); transform-origin: left; }
+      30% { opacity: 0.6; transform: scaleX(1); }
+      70% { opacity: 0.6; transform: scaleX(1); }
+      100% { opacity: 0; transform: scaleX(0); transform-origin: right; }
+    }
+
+    @media (max-width: 480px) {
+      .notify-form { flex-direction: column; border-radius: 6px; }
+      .notify-form button { border-radius: 0; }
+      body { overflow: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shimmer"></div>
+
+<div class="container">
+
+  <div class="logo-wrap">
+    <img src="jonnyra-logo.jpg" alt="JONNY RA Logo" />
+  </div>
+
+  <div class="brand">JONNY <span>RA</span></div>
+
+  <div class="tagline">Jeopardized &nbsp;·&nbsp; Opinion &nbsp;·&nbsp; Never &nbsp;·&nbsp; Needed &nbsp;·&nbsp; You</div>
+
+  <div class="divider"></div>
+
+  <div class="status">
+    <span class="dot"></span>
+    Something big is being built
+  </div>
+
+  <div class="headline">
+    The <em>empire</em> is<br/>under construction.
+  </div>
+
+  <div class="sub">
+    Music. Film. Streetwear. Technology. Housing. Foundation.<br/>
+    One vision. Many doors. Opening soon.
+  </div>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:0.6rem; width:100%;">
+    <form class="notify-form" onsubmit="handleSubmit(event)">
+      <input type="email" id="emailInput" placeholder="your@email.com" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <div class="form-note">Be the first to know when we launch.</div>
+  </div>
+
+
+
+</div>
+
+<div class="footer">© 2026 JONNY RA · Byrd Capital & Creative Inc. · All Rights Reserved</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('emailInput').value;
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ You\'re In';
+  btn.style.background = '#4caf50';
+  btn.style.color = '#fff';
+  e.target.querySelector('input').disabled = true;
+  btn.disabled = true;
+  // TODO: wire to email list (Mailchimp/Resend) when ready
+  console.log('Email captured:', email);
+}
+</script>
+
+</body>
+</html>
